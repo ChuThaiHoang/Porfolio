@@ -617,7 +617,7 @@ h3.my-profession
 }
 .porfolio .portfolio-item-inner
 {
-   border: 1px solid var(--bg-black-100);
+   border: 6px solid var(--bg-black-100);
    border-radius: 10px;
    overflow: hidden;
    cursor: pointer;
@@ -627,5 +627,4 @@ h3.my-profession
    width: 450px;
    display: block;
    height: 350px;
-   image-resolution: initial;
 }
