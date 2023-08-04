@@ -34,6 +34,10 @@ body
     box-sizing: border-box;
 }
  /* section  */
+ .section.section.back-section
+ {
+   z-index: 1;
+ }
 .section
 {
     background: var(--bg-black-900);
@@ -41,6 +45,32 @@ body
     display: block;
     padding: 0 30px;
     opacity: 1;
+    left: 270px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+.section.active
+{
+   z-index: 2;
+   opacity: 1;
+   animation: slideSection 1s ease;
+}
+@keyframes slideSection
+{
+   0%
+   {
+      transform: translateX(100%);
+   }
+   100%
+   {
+      transform: translateX(0%);
+   }
 }
 .hidden
 {
@@ -182,45 +212,60 @@ ul
  .aside .nav-toggler
  {
     height: 40px;
-    width: 45px;
-    border: 1px solid var(--bg-black-50);
+    width: 40px;
+    border: 3px solid var(--bg-black-50);
     cursor: pointer;
     position: fixed;
     left: 300px;
     top: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     background: var(--bg-black-100);
     display: none;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
  }
  .aside .nav-toggler span
  {
-    height: 2px;
+    height: 3px;
     width: 18px;
     background: var(--skin-color);
     display: inline-block;
     position: relative;
  }
+ .aside .nav-toggler.open span
+ {
+   background-color: transparent;
+ }
  .aside .nav-toggler span::before
  {
     content: '';
-    height: 2px;
+    height: 4px;
     width: 18px;
     background: var(--skin-color);
     position: absolute;
-    top: -6px;
+    top: -8px;
     left: 0;
+ }
+ .aside .nav-toggler.open span::before
+ {
+   transform: rotate(45deg);
+   top: 0;
  }
  .aside .nav-toggler span::after
  {
     content: '';
-    height: 2px;
+    height: 4px;
     width: 18px;
     background: var(--skin-color);
     position: absolute;
-    top: 6px;
+    top: 8px;
     left: 0;
+ }
+ .aside .nav-toggler.open span::after
+ {
+   transform: rotate(-45deg);
+   top: 0;
  }
  .aside .nav
  {
@@ -262,6 +307,7 @@ ul
     justify-content: center;
     align-items: center;
     z-index: 10;
+    transition: all 0.3s ease;
 }
 /* home */
 .home
@@ -400,7 +446,6 @@ h3.my-profession
 }
 .about .about-content .personal-info .buttons .btn
 {
-   margin-right: 15px;
    margin-top: 10px;
 }
 .about .about-content .skills
@@ -728,14 +773,39 @@ h3.my-profession
 }
 @media (max-width: 1199px) 
 {
+   .section .container
+   {
+      padding-top: 70px;
+   }
    .aside
    {
       left: -270px;
    }
-   .main-content
+   .section
+   {
+      left: 0;
+   }
+   .section.open
+   {
+      left: 270px;
+   }
+   .aside.open
+   {
+      left: 0;
+   }
+   .aside .nav-toggler
+   {
+      display: flex;
+      left: 30px;
+   }
+   .aside .nav-toggler.open
+   {
+      left: 300px;
+   }
+   /* .main-content
    {
       padding-left: 0;
-   }
+   } */
    .about .about-content .personal-info .info-item p span
    {
       display: block;
