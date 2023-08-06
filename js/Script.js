@@ -101,7 +101,7 @@ function sendMsg(e)
                     Password : "D98E7A03AEC4120CE54DB77C86ABED2DD04D",
                     To : 'hoangchuzz2003@gmail.com',
                     From : "hoangchuzz2003@gmail.com",
-                    Subject : name+" "+subj,
+                    Subject : name +" "+ subj,
                     Body : mess
                 }).then
                     (
