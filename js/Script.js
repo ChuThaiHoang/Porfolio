@@ -88,3 +88,23 @@ function removeBackSection()
             allSection[i].classList.remove("back-section");
         }
 }
+const name = document.querySelector("name"),
+      email = document.querySelector("email"),
+      subj = document.querySelector("subject"),
+      mess = document.querySelector("msg");
+function sendMsg(e)
+            {
+                Email.send
+                ({
+                    Host : "smtp.elasticemail.com",
+                    Username : "loliking2k3@gmail.com",
+                    Password : "D98E7A03AEC4120CE54DB77C86ABED2DD04D",
+                    To : 'hoangchuzz2003@gmail.com',
+                    From : "hoangchuzz2003@gmail.com",
+                    Subject : name+" "+subj,
+                    Body : mess
+                }).then
+                    (
+                        message => alert(message)
+                );
+            }

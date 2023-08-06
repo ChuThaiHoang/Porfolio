@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=coccoc" >
-        <meta name="viewport" content="width=device-width, initial-scale=1.5">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Document</title>
         <!-- CSS Files -->
         <link rel="stylesheet" href="css/style.css">
@@ -337,15 +337,15 @@
                             <!-- Contact info item start -->
                             <div class="contact-info-item padd-15">
                                 <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
-                                <h4>Email </h4>
+                                <h4>Address</h4>
                                 <p>Hà Nội, Việt Nam</p>
                             </div>
                             <!-- Contact info item end -->
                             <!-- Contact info item start -->
                             <div class="contact-info-item padd-15">
                                 <div class="icon"><i class="fa fa-envelope"></i></div>
-                                <h4>Address </h4>
-                                <p>ex@.gmail.com</p>
+                                <h4>Email</h4>
+                                <p>hoangchuzz2003@.gmail.com</p>
                             </div>
                             <!-- Contact info item end -->
                             <!-- Contact info item start -->
@@ -360,29 +360,37 @@
                             <h4 class="contact-sub-title padd-15">I'm very resposive to messages</h4>
                             <!-- Contact Form -->
                             <div class="row">
-                                <form class="contact-form padd-15" action="https://formsubmit.co/el/wagila" method="post">
-                                    <div class="form-item col-6 padd-15">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Name">
+                                <form class="contact-form padd-15" onsubmit="sendMsg(); ">
+                                    <div class="row">
+                                        <div class="form-item col-6 padd-15">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Name">
+                                            </div>
+                                        </div>
+                                        <div class="form-item col-6 padd-15">
+                                            <div class="form-group">
+                                                <input type="subject" class="form-control" placeholder="Email">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="form-item col-6 padd-15">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Email">
+                                    <div class="row">
+                                        <!-- <div class="form-item col-12 padd-15">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" placeholder="Email">
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-item col-12 padd-15">
+                                            <div class="form-group">
+                                                <textarea type="msg" class="form-control" id="" placeholder="Messages"></textarea>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="form-item col-12 padd-15">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Subject">
+                                    <div class="row">
+                                        <div class="form-item col-12 padd-15">
+                                            <button type="submit" class="btn">Send Message</button>
                                         </div>
-                                    </div>
-                                    <div class="form-item col-12 padd-15">
-                                        <div class="form-group">
-                                            <textarea name="" class="form-control" id="" placeholder="Messages"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-item col-12 padd-15">
-                                        <button type="submit" class="btn">Send Message</button>
                                     </div>
                                 </form>
                                 <!-- <div class="contact-form padd-15">
@@ -401,20 +409,20 @@
                                     <div class="row">
                                         <div class="form-item col-12 padd-15">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Subject">
+                                                <input type="subject" class="form-control" placeholder="Subject">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-item col-12 padd-15">
                                             <div class="form-group">
-                                                <textarea name="" class="form-control" id="" placeholder="Messages"></textarea>
+                                                <textarea type="msg" class="form-control" id="" placeholder="Messages"></textarea>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-item col-12 padd-15">
-                                            <button type="submit" class="btn">Send Message</button>
+                                            <button type="submit" class="btn"><a href="http://youtube.com">Send Message</a></button>
                                         </div>
                                     </div>
                                 </div> -->
@@ -450,6 +458,7 @@
         crossorigin="anonymous" 
         referrerpolicy="no-referrer">
         </script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
         <script src="js/Script.js"></script>
         <script src="js/style-switcher.js"></script>
     </body>
