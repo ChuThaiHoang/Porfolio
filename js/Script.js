@@ -88,10 +88,9 @@ function removeBackSection()
             allSection[i].classList.remove("back-section");
         }
 }
-const name = document.querySelector("name"),
-      email = document.querySelector("email"),
-      subj = document.querySelector("subject"),
-      mess = document.querySelector("msg");
+const name = document.getElementById("name"),
+      email = document.getElementById("mail"),
+      mess = document.getElementById("mes");
 function sendMsg(e)
             {
                 Email.send
@@ -101,8 +100,8 @@ function sendMsg(e)
                     Password : "D98E7A03AEC4120CE54DB77C86ABED2DD04D",
                     To : 'hoangchuzz2003@gmail.com',
                     From : "hoangchuzz2003@gmail.com",
-                    Subject : name +" "+ subj,
-                    Body : mess
+                    Subject : "Tên: "+name.value +", gmail: "+email.value,
+                    Body : mess.value
                 }).then
                     (
                         message => alert(message)
